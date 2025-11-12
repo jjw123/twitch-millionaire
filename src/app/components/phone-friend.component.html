@@ -1,0 +1,24 @@
+<div class="modal" (click)="close()">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <h2>Phone a Friend</h2>
+
+    @if(!selected()) {
+
+      <div>
+        <p>Select one of the recent chatters:</p>
+        <div class="grid">
+          @for(c of candidates(); track c) {
+            <button class="btn" (click)="choose(c)">{{c}}</button>
+          }
+        </div>
+      </div>
+    } @else {
+      <p>Talking to <b>{{selected()}}</b></p>
+      <div class="friend-line">
+        @for(line of feed(); track line) {
+          <div>{{line}}</div>
+        }
+      </div>
+    }
+  </div>
+</div>

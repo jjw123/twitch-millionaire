@@ -1,0 +1,13 @@
+<div class="modal" (click)="close()">
+  <div class="modal-card" (click)="$event.stopPropagation()">
+    <h2>Ask the Audience <small>({{countdown()/1000}}s)</small></h2>
+    <p>Chat: type <b>A</b>, <b>B</b>, <b>C</b>, or <b>D</b> once.</p>
+    @for(opt of options; track opt) {
+      <div class="row">
+        <div class="label">{{opt}}</div>
+        <div class="bar"><div [style.width.%]="percent(opt)"></div></div>
+        <div class="pct">{{percent(opt)}}%</div>
+      </div>
+    }
+  </div>
+</div>

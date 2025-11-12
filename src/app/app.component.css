@@ -1,0 +1,16 @@
+#chatbox{scroll-behavior:smooth}
+
+.result-modal{z-index:30}
+.result-card{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.result-card h2{margin:0;font-size:2rem}
+.result-card p{margin:0;font-size:1.1rem;max-width:420px}
+.result-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.result-card.victory h2{color:var(--accent)}
+.result-card.defeat h2{color:#ff6161}
+.result-actions .btn.ghost{background:transparent;border-color:#ff6161;color:#ff6161}
+.start-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.start-card{background:#0c1638;border:2px solid #2c3f92;border-radius:18px;padding:32px;display:flex;flex-direction:column;gap:18px;align-items:center;text-align:center;max-width:440px;width:100%}
+.start-card p{margin:0;font-size:1.1rem;opacity:.9}
+.start-btn{min-width:220px;font-size:1.1rem}
+.confirm-card h2{margin:0 0 8px}
+.confirm-card p{margin:0}

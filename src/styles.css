@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+--bg:#0b1330; /* deep blue */
+--panel:#0f1b45; /* panel blue */
+--accent:#1ad76b; /* neon green */
+--accent-2:#f6a800; /* gold */
+--text:#eef3ff;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:radial-gradient(circle at 50% 40%, #1a2457 0%, #0b1330 60%, #070b20 100%);font-family:Montserrat,system-ui,Segoe UI,sans-serif;color:var(--text)}
+
+
+.app-shell{display:grid;grid-template-columns:375px 1fr;grid-template-rows:auto 1fr;gap:12px;height:100vh;padding:12px}
+.header{grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:16px;padding:0 8px}
+.logo{font-weight:800;letter-spacing:.15em;text-transform:uppercase;background:linear-gradient(180deg,#d9ecff,#7ec8ff);-webkit-background-clip:text;color:transparent}
+
+.chat-column{display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.chat-column .toggle-chat{margin-bottom:4px}
+.chat{background:#0a1027;border:2px solid #1f2c68;border-radius:14px;display:flex;flex-direction:column;overflow:hidden; flex-grow: 1;}
+.chat header{padding:10px 12px;background:linear-gradient(180deg,#17245a,#0e1a45);font-weight:700}
+.chat .messages{flex:1;overflow:auto;padding:10px 8px;display:flex;flex-direction:column;gap:6px}
+.chat .msg{font-size:.9rem;line-height:1.2;background:#0f1a42;padding:6px 8px;border-radius:8px;border:1px solid #23337e}
+.chat footer{padding:8px 10px;border-top:1px solid #22306c;font-size:.85rem;opacity:.85}
+
+
+.stage{display:grid;grid-template-columns:1fr 280px;gap:12px}
+
+
+.board{background:var(--panel);border-radius:18px;border:2px solid #24357b;display:flex;flex-direction:column;gap:8px;padding:12px}
+.question{background:linear-gradient(180deg,#122154,#0c1a45);border:2px solid #3144a3;border-radius:14px;padding:14px 16px;font-size:1.15rem}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.answer{background:linear-gradient(180deg,#0d1a45,#0a1538);border:2px solid #2d3d8e;border-radius:14px;padding:12px 16px;font-weight:600;cursor:pointer;position:relative}
+.answer:hover{filter:brightness(1.2)}
+.answer.disabled{opacity:.35;pointer-events:none}
+.answer.correct{outline:3px solid var(--accent)}
+.answer.incorrect{outline:3px solid #e54444}
+.answer span.label{color:var(--accent-2);margin-right:8px}
+.answer span{color:white}
+
+
+.controls{display:flex;gap:10px;flex-wrap:wrap}
+.btn{background:linear-gradient(180deg,#1c2f77,#13245f);border:2px solid #3450b3;border-radius:12px;color:var(--text);padding:8px 12px;font-weight:700;cursor:pointer}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.toggle-chat{font-size:.9rem}
+.app-shell.no-chat{grid-template-columns:max-content 1fr}
+
+
+.ladder{background:linear-gradient(180deg,#101b45,#0a1230);border:2px solid #263982;border-radius:18px;padding:10px}
+.ladder ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.ladder li{display:flex;justify-content:space-between;padding:6px 10px;border-radius:8px}
+.ladder li.active{background:rgba(250,170,0,.25);outline:2px solid var(--accent-2)}
+
+
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center}
+.modal-card{width:min(720px,90vw);background:#0c1638;border:2px solid #2c3f92;border-radius:14px;padding:16px}
+.bar{height:18px;background:#203079;border:1px solid #3a50b0;border-radius:8px;overflow:hidden}
+.bar>div{height:100%;background:var(--accent);}
+.friend-line{background:#0d163a;border:1px dashed #3a50b0;border-radius:10px;padding:8px;margin-top:8px;min-height:60px}
